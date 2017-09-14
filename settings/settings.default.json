@@ -1,0 +1,32 @@
+{
+    "service":{
+        "mail":{
+            "username": "user@gmail.com",
+            "password": "password",
+            "host": "imap.gmail.com",
+            "port": 993, 
+            "tls": true,
+            "connTimeout": 10000,
+            "authTimeout": 5000, 
+            "debug": null,
+            "tlsOptions": { "rejectUnauthorized": false },
+            "mailbox": "INBOX", 
+            "searchFilter": ["UNSEEN"], 
+            "markSeen": true, 
+            "fetchUnreadOnStart": true,
+            "attachments": true, 
+            "attachmentOptions": { "directory": "attachments/" }
+        },
+        "firebase":{
+            "key":{
+                "path":"/home/.json"
+            },
+            "database":{
+                "name": "feed"
+            }
+        },
+        "storage":{
+            "name":"xx"
+        }
+    }
+}
