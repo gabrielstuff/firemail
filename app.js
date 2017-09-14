@@ -27,6 +27,7 @@ mailListener.on("server:connected", ()=>{
 
 mailListener.on("server:disconnected", ()=>{
   console.log("imapDisconnected")
+  mailListener.start()
 })
 
 mailListener.on("error", (err) => {
