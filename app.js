@@ -7,7 +7,7 @@ var mailListener = new MailListener(settings.service.mail)
 var admin = require("firebase-admin")
 const format = require('util').format
 const uuid = require('uuid')
-const gm = require('gm')
+const gm = require('gm').subClass({imageMagick: true})
 
 
 var serviceAccount = require(settings.service.firebase.key.path)
