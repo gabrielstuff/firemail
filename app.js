@@ -51,7 +51,7 @@ mailListener.on("attachment", function(attachment){
 let uploadFile = (file, from, subject, html) => {
   const blob = bucket.file(file.fileName)
   const blobStream = blob.createWriteStream()
-  subject = subject || mail.body 
+  subject = subject || 'no subject' 
   blobStream.on('error', (err) => {
     console.error('error', err)
   });
