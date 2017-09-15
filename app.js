@@ -7,6 +7,7 @@ var mailListener = new MailListener(settings.service.mail)
 var admin = require("firebase-admin")
 const format = require('util').format
 const uuid = require('uuid')
+const gm = require('gm')
 
 
 var serviceAccount = require(settings.service.firebase.key.path)
@@ -67,8 +68,16 @@ let uploadFile = (file, from, subject, html) => {
       console.error('ERROR:', err);
     })
   });
-
-  blobStream.end(file.content)
+  // auto-orient an image
+  gm(file.content, file.fileName)
+  .autoOrient()
+  .toBuffer('JPG',function (err, buffer) {
+    if (err) {
+      console.error('An error occured while trying to orient', err)
+    } else {
+      blobStream.end(buffer)    
+    }
+  })
 }
 
 function writeNewMail(imageUrl, body, author, html) {
