@@ -180,5 +180,7 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/vim,osx,node,code,linux,windows,sublimetext
 
 settings/settings.json
+settings/*.json
 
+!settings/settings.default.json
 !.gitkeep

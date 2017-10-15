@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "@google-cloud/storage": "^1.2.1",
     "firebase-admin": "^5.2.1",
     "gm": "^1.23.0",
+    "mail-listener-fixed": "^1.1.0",
     "mail-listener2": "^0.3.1",
     "standard-settings": "^1.1.9",
     "uuid": "^3.1.0"
